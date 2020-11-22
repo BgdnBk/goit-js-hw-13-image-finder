@@ -30,14 +30,16 @@ async function fetchImagesMore() {
   try {
     const hits = await apiServise.fecthContent();
     markup(hits);
+
+    window.scrollBy({
+    top: 3000,
+    // left: 100,
+    behavior: 'smooth'
+});
     
-    scrollToWithAnimation(
-      element = body,
-      direction = 'scrollTop',
-      to = 12,
-      duration = 10000,
-      transition = 'easeInOutCirc',
-    );
+    // scrollToWithAnimation(
+    //   refs.container, 'scrollTop', 12, 10000, 'easeInOutCirc',
+    // ); 
 
   } catch (error) { 
     console.log(error);
